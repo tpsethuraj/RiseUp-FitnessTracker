@@ -232,6 +232,7 @@ data class WeeklyDataState(
 @Composable
 fun rememberWeeklyStepData(activity: Activity): WeeklyDataState {
     val context: Context = activity
+    val fitnessPrefs = remember { FitnessPreferences(context) }
     val weeklyData = remember { mutableStateOf<List<DailyStepData>>(emptyList()) }
 
     val fitnessOptions = remember {
@@ -249,6 +250,7 @@ fun rememberWeeklyStepData(activity: Activity): WeeklyDataState {
         val today = LocalDate.now()
         val startOfWeek = today.minusDays(today.dayOfWeek.value.toLong() - 1).atStartOfDay()
         val end = LocalDateTime.now()
+        val stepGoal = fitnessPrefs.getStepGoal()
 
         val request = DataReadRequest.Builder()
             .aggregate(DataType.TYPE_STEP_COUNT_DELTA, DataType.AGGREGATE_STEP_COUNT_DELTA)
@@ -272,7 +274,7 @@ fun rememberWeeklyStepData(activity: Activity): WeeklyDataState {
                     val steps = bucket.getDataSet(DataType.AGGREGATE_STEP_COUNT_DELTA)
                         ?.dataPoints?.firstOrNull()
                         ?.getValue(Field.FIELD_STEPS)?.asInt() ?: 0
-                    DailyStepData(dayName, steps, steps >= 6000, date) 
+                    DailyStepData(dayName, steps, steps >= stepGoal, date) 
                 }
                 
                 val fullWeek = (1..7).map { i ->
