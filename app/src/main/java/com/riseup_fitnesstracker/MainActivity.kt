@@ -1,0 +1,63 @@
+package com.riseup_fitnesstracker
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.runtime.*
+import androidx.compose.ui.platform.LocalContext
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.riseup_fitnesstracker.data.pref.FitnessPreferences
+import com.riseup_fitnesstracker.ui.SplashScreen
+import com.riseup_fitnesstracker.ui.history.HistoryScreen
+import com.riseup_fitnesstracker.ui.home.HomeScreen
+import com.riseup_fitnesstracker.ui.login.LoginScreen
+import com.riseup_fitnesstracker.ui.settings.SettingsScreen
+import com.riseup_fitnesstracker.ui.signup.SignUpScreen
+import com.riseup_fitnesstracker.ui.theme.FitnessTrackerTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        installSplashScreen()
+        setContent {
+            val context = LocalContext.current
+            val fitnessPrefs = remember { FitnessPreferences(context) }
+            var themeMode by remember { mutableStateOf(fitnessPrefs.getThemeMode()) }
+
+            FitnessTrackerTheme(themeMode = themeMode) {
+                FitnessTrackerApp(onThemeChange = { newMode ->
+                    themeMode = newMode
+                })
+            }
+        }
+    }
+}
+
+@Composable
+fun FitnessTrackerApp(onThemeChange: (String) -> Unit) {
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "splash") {
+        composable("splash") {
+            SplashScreen(navController = navController)
+        }
+        composable("login") {
+            LoginScreen(navController = navController)
+        }
+        composable("signup") {
+            SignUpScreen(navController = navController)
+        }
+        composable("home/{username}") { backStackEntry ->
+            val username = backStackEntry.arguments?.getString("username") ?: ""
+            HomeScreen(username = username, navController = navController)
+        }
+        composable("history") {
+            HistoryScreen(navController = navController)
+        }
+        composable("settings") {
+            SettingsScreen(navController = navController, onThemeChange = onThemeChange)
+        }
+    }
+}

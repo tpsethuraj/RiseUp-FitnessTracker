@@ -1,15 +1,4 @@
 <resources>
-<<<<<<< HEAD
     <string name="app_name">RiseUp-FitnessTracker</string>
     <string name="default_web_client_id">1053684082089-gps4ajrnr0d8jklgke6pgkbrcs49pmtq.apps.googleusercontent.com</string>
 </resources>
-=======
-<<<<<<< HEAD
-    <string name="app_name">FitnessTracker</string>
-</resources>
-=======
-    <string name="app_name">RiseUp-FitnessTracker</string>
-    <string name="default_web_client_id">1053684082089-gps4ajrnr0d8jklgke6pgkbrcs49pmtq.apps.googleusercontent.com</string>
-</resources>
->>>>>>> c578e340b6c58b6391e07561db14610aea4ef8b2
->>>>>>> 5fa740e8defd87918d4fd59418947f73d6008b1a

@@ -12,12 +12,6 @@
           "package_name": "com.fitnesstracker"
         }
       },
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-      "oauth_client": [],
-=======
->>>>>>> 5fa740e8defd87918d4fd59418947f73d6008b1a
       "oauth_client": [
         {
           "client_id": "1053684082089-77r4k8c0kvm1o6bhgota5u0b2hed3gjj.apps.googleusercontent.com",
@@ -32,10 +26,6 @@
           "client_type": 3
         }
       ],
-<<<<<<< HEAD
-=======
->>>>>>> c578e340b6c58b6391e07561db14610aea4ef8b2
->>>>>>> 5fa740e8defd87918d4fd59418947f73d6008b1a
       "api_key": [
         {
           "current_key": "AIzaSyAddoYSDdb1o82bTNRdAsmEn-u46XcY15w"
@@ -43,22 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-          "other_platform_oauth_client": []
-=======
->>>>>>> 5fa740e8defd87918d4fd59418947f73d6008b1a
           "other_platform_oauth_client": [
             {
               "client_id": "1053684082089-gps4ajrnr0d8jklgke6pgkbrcs49pmtq.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-<<<<<<< HEAD
-=======
->>>>>>> c578e340b6c58b6391e07561db14610aea4ef8b2
->>>>>>> 5fa740e8defd87918d4fd59418947f73d6008b1a
         }
       }
     },
@@ -69,12 +49,6 @@
           "package_name": "com.focustimer"
         }
       },
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-      "oauth_client": [],
-=======
->>>>>>> 5fa740e8defd87918d4fd59418947f73d6008b1a
       "oauth_client": [
         {
           "client_id": "1053684082089-tpa0uecd2ncu1f63de4mkh4eamiorp0k.apps.googleusercontent.com",
@@ -89,10 +63,6 @@
           "client_type": 3
         }
       ],
-<<<<<<< HEAD
-=======
->>>>>>> c578e340b6c58b6391e07561db14610aea4ef8b2
->>>>>>> 5fa740e8defd87918d4fd59418947f73d6008b1a
       "api_key": [
         {
           "current_key": "AIzaSyAddoYSDdb1o82bTNRdAsmEn-u46XcY15w"
@@ -100,12 +70,6 @@
       ],
       "services": {
         "appinvite_service": {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-          "other_platform_oauth_client": []
-=======
->>>>>>> 5fa740e8defd87918d4fd59418947f73d6008b1a
           "other_platform_oauth_client": [
             {
               "client_id": "1053684082089-gps4ajrnr0d8jklgke6pgkbrcs49pmtq.apps.googleusercontent.com",
@@ -186,10 +150,6 @@
               "client_type": 3
             }
           ]
-<<<<<<< HEAD
-=======
->>>>>>> c578e340b6c58b6391e07561db14610aea4ef8b2
->>>>>>> 5fa740e8defd87918d4fd59418947f73d6008b1a
         }
       }
     }
