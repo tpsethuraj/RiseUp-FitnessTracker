@@ -35,29 +35,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-@Composable
-fun FitnessTrackerApp(onThemeChange: (String) -> Unit) {
-    val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "splash") {
-        composable("splash") {
-            SplashScreen(navController = navController)
-        }
-        composable("login") {
-            LoginScreen(navController = navController)
-        }
-        composable("signup") {
-            SignUpScreen(navController = navController)
-        }
-        composable("home/{username}") { backStackEntry ->
-            val username = backStackEntry.arguments?.getString("username") ?: ""
-            HomeScreen(username = username, navController = navController)
-        }
-        composable("history") {
-            HistoryScreen(navController = navController)
-        }
-        composable("settings") {
-            SettingsScreen(navController = navController, onThemeChange = onThemeChange)
-        }
-    }
-}
